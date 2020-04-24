@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AngularJS-Customer-application"
+    }
+  },
+  "defaultProject": "AngularJS-Customer-application",
+  "cli": {
+    "analytics": false
+  }
 }
