@@ -1,4 +1,8 @@
+// Angular + 3rd party imports
 import { Component, OnInit } from '@angular/core';
+
+// Custom imports
+import { ICustomer } from '../../shared/interfaces';
 
 @Component({
   selector: 'app-customers-list',
@@ -7,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomersListComponent implements OnInit {
 
-  filteredCustomers: any[] = [];
+  filteredCustomers: ICustomer[] = [];
   customerOrderTotal: number;
   curencyCode: 'USD';
 
