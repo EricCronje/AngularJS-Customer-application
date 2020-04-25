@@ -1,6 +1,8 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { CarsComponent } from './cars/cars.component';
+import { CarsModule } from './cars/cars.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -32,4 +34,5 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('AngularJS-Customer-application app is running!');
   });
+
 });
