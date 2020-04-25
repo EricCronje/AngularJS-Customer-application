@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { CarsComponent } from './cars.component';
 
+import { CarsListComponent } from './cars-list/cars-list.component';
+
 @NgModule({
   declarations: [
-    CarsComponent
+    CarsComponent, CarsListComponent
   ],
   imports: [
     CommonModule

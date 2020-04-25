@@ -11,5 +11,9 @@ export class CarsComponent implements OnInit{
 
     ngOnInit(){
         this.title = 'Cars';
+        this.cars = [
+            {reg: 1, color: 'red', model: 'Mazda', engine: '1.4'},
+            {reg: 2, color: 'blue', model: 'Porche', engine: 'V6'}
+        ];
     }
 }
