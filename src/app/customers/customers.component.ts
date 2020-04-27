@@ -8,14 +8,18 @@ import { ICustomer } from '../shared/interfaces';
 export class CustomersComponent implements OnInit{
     title: string;
     people: ICustomer[];
+    isVisible = true;
+    version: string;
 
     constructor(){}
 
     ngOnInit(){
         this.title = 'Customers';
+        this.version = '2.1.8';
         this.people = [
-            {id: 1, name: 'Donald', city: 'CapeTown', orderTotal: 5.55, customerSince: new Date(2020, 1, 1)},
-            {id: 2, name: 'Ernist', city: 'Pretoria', orderTotal: 6.78, customerSince: new Date(2020, 2, 5)}
+            {id: 1, name: 'donald', city: 'CapeTown', orderTotal: 5.06, customerSince: new Date(2020, 1, 1)},
+            {id: 2, name: 'Ernist', city: 'Pretoria', orderTotal: 6.06, customerSince: new Date(2020, 2, 5)},
+            {id: 3, name: 'frank john', city: 'CApetown', orderTotal: 6.06, customerSince: new Date(2020, 2, 5)}
         ];
     }
 }

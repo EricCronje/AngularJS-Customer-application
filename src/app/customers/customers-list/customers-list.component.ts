@@ -1,5 +1,5 @@
 // Angular + 3rd party imports
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 // Custom imports
 import { ICustomer } from '../../shared/interfaces';
@@ -9,15 +9,40 @@ import { ICustomer } from '../../shared/interfaces';
   templateUrl: './customers-list.component.html',
   styleUrls: ['../../../assets/styles.css']
 })
+
+
 export class CustomersListComponent implements OnInit {
+  private customersBacckingStore: ICustomer[] = []; // backing field / backing data store.
 
   filteredCustomers: ICustomer[] = [];
-  customerOrderTotal: number;
+  customersOrderTotal: number;
   curencyCode: 'USD';
 
+  @Input() get customers(): ICustomer[] {
+    return this.customersBacckingStore;
+  }
+
+  set customers(value: ICustomer[]) {
+    if (value) {
+        this.filteredCustomers = this.customersBacckingStore = value;
+        this.calculateOrders();
+    }
+  }
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  calculateOrders() {
+    this.customersOrderTotal = 0;
+    this.filteredCustomers.forEach((cust: ICustomer) => {
+        this.customersOrderTotal += cust.orderTotal;
+    });
+  }
+
+  sort(prop: string){
+
   }
 
 }
