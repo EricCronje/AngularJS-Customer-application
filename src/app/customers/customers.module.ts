@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; // Adds the ngModule! to be used on the template
 import { CommonModule } from '@angular/common';
 
 import { CustomersComponent } from './customers.component';
@@ -15,7 +16,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   exports: [ CustomersComponent ]
 })
