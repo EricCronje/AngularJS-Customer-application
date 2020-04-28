@@ -1,25 +1,15 @@
-// Angular or 3rd party imports
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+import { CustomersModule } from './customers/customers.module';
+import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-// Custom imports
-import { AppComponent } from './app.component';
-import { CustomersModule } from './customers/customers.module';
-import { SharedModule } from './shared/shared.module';
-import { CoreModule } from './core/core.module';
-
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CustomersModule,
-    SharedModule,
-    CoreModule
-  ],
-  bootstrap: [AppComponent]
+  imports:      [ BrowserModule, CustomersModule, SharedModule, CoreModule, AppRoutingModule ],
+  declarations: [ AppComponent ],
+  bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

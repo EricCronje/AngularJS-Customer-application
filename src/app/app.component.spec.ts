@@ -1,35 +1,15 @@
-import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  }));
+const routes: Routes = [
+    { path: '', pathMatch: 'full', redirectTo: '/customers' },
+    { path: '**', pathMatch: 'full', redirectTo: '/customers' }
+];
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+@NgModule({
+    imports: [ RouterModule.forRoot(routes) ], 
+    exports: [ RouterModule ]
+})
+export class AppRoutingModule {
 
-  it(`should have as title 'AngularJS-Customer-application'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('AngularJS-Customer-application');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('AngularJS-Customer-application app is running!');
-  });
-});
+}
