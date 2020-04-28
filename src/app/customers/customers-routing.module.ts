@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { CustomersComponent } from './customers.component';
 
 const routes: Routes = [
-    { path: 'customers', pathMatch: 'full',  component: CustomersComponent }
+    { path: 'customers', pathMatch: 'full',  component: CustomersComponent },
 ];
 
 @NgModule({
-    imports: [ RouterModule.forChild(routes) ], 
-    exports: [ RouterModule ]
+    exports: [ RouterModule ],
+    imports: [ RouterModule.forChild(routes) ],
 })
 export class CustomersRoutingModule {
 

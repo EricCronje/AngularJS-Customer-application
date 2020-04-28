@@ -5,15 +5,15 @@ import { ICustomer } from '../shared/interfaces';
 
 @Component({
     selector: 'app-customers',
-    templateUrl: './customers.component.html'
+    templateUrl: './customers.component.html',
 })
 export class CustomersComponent implements OnInit {
-    title: string;
-    people: any[];
-    
+    public title: string;
+    public people: any[];
+
     constructor(private dataService: DataService) {}
-    
-    ngOnInit() {
+
+    public ngOnInit() {
         this.title = 'Customers';
         this.dataService.getCustomers()
             .subscribe((customers: ICustomer[]) => this.people = customers);
